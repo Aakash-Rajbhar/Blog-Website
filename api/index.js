@@ -33,6 +33,11 @@ app.use(cors())
 //   }
 // }
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://aakash-blog-website.netlify.app');
+    next();
+  });
+
 
 app.use(express.json())
 app.use(cookieParser())
