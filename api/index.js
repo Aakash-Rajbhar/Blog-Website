@@ -19,7 +19,7 @@ const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
 
-const allowedOrigins = ['https://blog-website-dfng5qbi4-aakash-rajbhars-projects.vercel.app'];
+const allowedOrigins = ['https://aakash-blog-website.vercel.app'];
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin)) {
