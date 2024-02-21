@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
-app.use(cors({credentials:true,origin:'http://localhost:3000'}))
+app.use(cors({credentials:true,origin:'https://aakash-blog-website.netlify.app'}))
 // app.use(cors())
 
 // var whitelist = ['https://aakash-blog-website.vercel.app/', 'http://localhost:4000', 'https://blog-website-3jgd.onrender.com']
