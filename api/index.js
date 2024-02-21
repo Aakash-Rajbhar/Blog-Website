@@ -22,7 +22,7 @@ const secretKey = 'aakashrajbhar25'
 // app.use(cors({credentials:true,origin:'https://aakash-blog-website.vercel.app/'}))
 app.use(cors())
 
-var whitelist = ['https://aakash-blog-website.vercel.app/', 'http://localhost:4000']
+var whitelist = ['https://aakash-blog-website.vercel.app/', 'http://localhost:4000', 'https://blog-website-3jgd.onrender.com']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
