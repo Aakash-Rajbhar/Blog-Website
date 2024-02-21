@@ -22,6 +22,18 @@ const secretKey = 'aakashrajbhar25'
 // app.use(cors({credentials:true,origin:'https://aakash-blog-website.vercel.app/'}))
 app.use(cors())
 
+var whitelist = ['https://aakash-blog-website.vercel.app/', 'http://localhost:4000']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -40,6 +52,10 @@ try {
     console.log(error)
     
 }
+
+app.get('/', cors(corsOptions), function (req, res, next){
+    res.json({msg: 'This is CORS-enabled for a whitelisted domain.'})
+} )
 
 
 app.post('/register', async (req, res) => {
