@@ -17,7 +17,7 @@ export default function LoginPage() {
   async function login(ev) {
     ev.preventDefault();
     try {
-        const response = await fetch(`/login`, {
+        const response = await fetch(`${BASE_URL}/login`, {
           method: 'POST',
           body: JSON.stringify({ username, password }),
           headers: { 'Content-Type': 'application/json' },
