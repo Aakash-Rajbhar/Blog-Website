@@ -24,7 +24,7 @@ const secretKey = 'aakashrajbhar25'
 
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://aakash-blog-website.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://aakash-blog-website.netlify.app/');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
 });
