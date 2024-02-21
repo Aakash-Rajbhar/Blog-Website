@@ -18,7 +18,21 @@ const port = 4000
 const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
-app.use(cors({credentials:true,origin:'https://blog-website-server-delta.vercel.app/'}))
+
+const allowedOrigins = ['https://blog-website-dfng5qbi4-aakash-rajbhars-projects.vercel.app'];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+// app.use(cors({credentials:true,origin:'https://blog-website-server-delta.vercel.app/'}))
+
+
 app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
