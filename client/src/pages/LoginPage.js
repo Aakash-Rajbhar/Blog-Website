@@ -16,7 +16,7 @@ export default function LoginPage() {
   async function login(ev) {
     ev.preventDefault();
     try {
-        const response = await fetch('https://blog-website-server-delta.vercel.app/login', {
+        const response = await fetch('http://localhost:3000/login', {
           method: 'POST',
           body: JSON.stringify({ username, password }),
           headers: { 'Content-Type': 'application/json' },
