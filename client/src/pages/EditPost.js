@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'react-quill/dist/quill.snow.css';
 import {Navigate, useParams} from "react-router-dom";
 import Editor from '../components/Editor';
+import {BASE_URL} from '../helper.js'
 
 const EditPost = () => {
 
@@ -13,7 +14,7 @@ const EditPost = () => {
     const [redirect, setRedirect] = useState(false)
 
     useEffect(()=>{
-        fetch('http://localhost:4000/post/'+id).then(response => {
+        fetch(`${BASE_URL}/post/`+id).then(response => {
             response.json().then(postInfo => {
                 setTitle(postInfo.title);
                 setContent(postInfo.content);

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
 import { UserContext } from "../UserContext";
+import {BASE_URL} from '../helper.js'
 
 const PostPage = () => {
   const [postInfo, setPostInfo] = useState(null);
@@ -9,7 +10,7 @@ const PostPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`${BASE_URL}/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });

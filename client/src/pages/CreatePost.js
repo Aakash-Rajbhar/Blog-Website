@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import 'react-quill/dist/quill.snow.css';
 import {Navigate} from "react-router-dom";
 import Editor from '../components/Editor';
+import {BASE_URL} from '../helper.js'
 
 
 
@@ -19,7 +20,7 @@ const CreatePost = () => {
         data.set('summary', summary);
         data.set('file', files[0])
         e.preventDefault();
-        const response = await fetch('http://localhost:4000/post',{
+        const response = await fetch(`${BASE_URL}/post`,{
             method:'POST',
             body: data,
             credentials: 'include'

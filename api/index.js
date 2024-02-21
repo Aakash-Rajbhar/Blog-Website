@@ -8,11 +8,12 @@ const cookieParser = require('cookie-parser')
 const multer = require('multer');
 const fs = require('fs');
 const Post = require('./models/Post');
+require('dotenv').config();
 
 const uploadMiddleware = multer({ dest: 'uploads/' })
 
 const app = express()
-const port = 4000
+const port = process.env.PORT || 5000;
 
 
 const salt = bcrypt.genSaltSync(10);
@@ -24,7 +25,7 @@ app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
 try {
-    mongoose.connect('mongodb+srv://theskyrajbhar:SkyMongoDb123@cluster0.eru1wmo.mongodb.net/?retryWrites=true&w=majority')
+    mongoose.connect(`${process.env.MONGODB_URI}`)
     console.log('Connected to mongodb');
     
 } catch (error) {

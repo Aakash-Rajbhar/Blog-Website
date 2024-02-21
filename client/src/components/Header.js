@@ -2,12 +2,17 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import logo from "../assets/logo.png";
+import {BASE_URL} from '../helper.js'
+
+// requiring dotenv 
+
+
 
 const Header = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch(`${BASE_URL}/profile`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
