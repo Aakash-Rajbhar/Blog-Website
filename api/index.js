@@ -20,23 +20,15 @@ const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
 // app.use(cors({credentials:true,origin:'https://aakash-blog-website.netlify.app'}))
-app.use(cors())
+// app.use(cors())
 
-// var whitelist = ['https://aakash-blog-website.vercel.app/', 'http://localhost:4000', 'https://blog-website-3jgd.onrender.com']
-// var corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://aakash-blog-website.netlify.app');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
-  });
+});
+
 
 
 app.use(express.json())
