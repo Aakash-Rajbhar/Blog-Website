@@ -23,7 +23,7 @@ const CreatePost = () => {
         const response = await fetch(`${BASE_URL}/post`,{
             method:'POST',
             body: data,
-            // credentials: 'include'
+            credentials: 'include'
         });
         if(response.ok){
             setRedirect(true);

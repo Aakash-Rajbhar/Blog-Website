@@ -13,7 +13,7 @@ const Header = () => {
 
   useEffect(() => {
     fetch(`${BASE_URL}/profile`, {
-      // credentials: "include",
+      credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
         setUserInfo(userInfo);
