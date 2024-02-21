@@ -19,8 +19,8 @@ const port = process.env.PORT || 5000;
 const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
-app.use(cors())
-// app.use(cors({credentials:true,origin:'https://aakash-blog-website.netlify.app'}))
+// app.use(cors())
+app.use(cors({credentials:true,origin:'https://aakash-blog-website.netlify.app'}))
 
 
 // app.use((req, res, next) => {
