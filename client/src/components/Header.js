@@ -2,10 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import logo from "../assets/logo.png";
-import {BASE_URL} from '../helper.js'
-
-// requiring dotenv 
-
+import { BASE_URL } from "../helper.js";
 
 
 const Header = () => {
