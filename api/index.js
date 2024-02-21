@@ -19,7 +19,7 @@ const port = process.env.PORT || 5000;
 const salt = bcrypt.genSaltSync(10);
 const secretKey = 'aakashrajbhar25'
 
-app.use(cors({credentials:true,origin:'https://blog-website-server-delta.vercel.app/'}))
+app.use(cors({credentials:true,origin:'https://aakash-blog-website.vercel.app/'}))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads', express.static(__dirname + '/uploads'))
