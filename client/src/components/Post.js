@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {format} from 'date-fns'
 import {BASE_URL} from '../helper.js'
 
+
 const Post = ({_id, title, summary, content, cover, createdAt, author}) => {
   return (
     <div className="post">

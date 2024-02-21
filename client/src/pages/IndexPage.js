@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Post from '../components/Post'
 import {BASE_URL} from '../helper.js'
 
+
 const IndexPage = () => {
 
   const [posts, setPosts] = useState([])

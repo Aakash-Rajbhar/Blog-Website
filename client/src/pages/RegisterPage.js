@@ -7,6 +7,7 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
   const [show, setShow] = useState(false);
+  
 
   const handleShow = () => {
     setShow(!show);

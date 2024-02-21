@@ -19,10 +19,17 @@ const salt = bcrypt.genSaltSync(10);
 const secretKey = "aakashrajbhar25";
 
 // app.use(cors())
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "https://aakash-blog-website.netlify.app/",
+//   })
+// );
+
 app.use(
   cors({
     credentials: true,
-    origin: "https://aakash-blog-website.netlify.app/",
+    origin: "http://localhost:3000"
   })
 );
 
