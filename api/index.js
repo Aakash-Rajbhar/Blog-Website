@@ -21,15 +21,15 @@ const secretKey = 'aakashrajbhar25'
 
 const allowedOrigins = ['https://aakash-blog-website.vercel.app'];
 app.use(cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true
-  }));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true // Allow cookies to be sent with the request
+}));
 
 // app.use(cors({credentials:true,origin:'https://blog-website-server-delta.vercel.app/'}))
 
