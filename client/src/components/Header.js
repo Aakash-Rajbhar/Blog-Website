@@ -7,7 +7,7 @@ const Header = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch("https://blog-website-server-delta.vercel.app/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -18,7 +18,7 @@ const Header = () => {
   }, []);
 
   const logout = () => {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://blog-website-server-delta.vercel.app/logout", {
       credentials: "include",
       method: "POST",
     });
