@@ -32,6 +32,10 @@ app.use(cors({
 
 // app.use(cors({credentials:true,origin:'https://blog-website-server-delta.vercel.app/'}))
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+  })
+
 
 app.use(express.json())
 app.use(cookieParser())
